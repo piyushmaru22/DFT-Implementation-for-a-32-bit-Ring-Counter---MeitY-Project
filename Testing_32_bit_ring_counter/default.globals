@@ -1,0 +1,20 @@
+set ::TimeLib ::tsgMarkCellLatchConstructFlag 1
+set conf_qxconf_file {NULL}
+set conf_qxlib_file {NULL}
+set defHierChar {/}
+set distributed_client_message_echo {1}
+set gpsPrivate::dpgNewAddBufsDBUpdate 1
+set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+set init_design_settop 0
+set init_gnd_net {VSS}
+set init_lef_file {/home/install/FOUNDRY/digital/180nm/dig/lef/all.lef}
+set init_mmmc_file {default.view}
+set init_pwr_net {VDD}
+set init_verilog {ring_counter_netlist.v}
+set lsgOCPGainMult 1.000000
+set pegDefaultResScaleFactor 1.000000
+set pegDetailResScaleFactor 1.000000
+set timing_library_float_precision_tol 0.000010
+set timing_library_load_pin_cap_indices {}
+set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+ 

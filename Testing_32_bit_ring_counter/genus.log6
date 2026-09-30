@@ -1,0 +1,105 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[16:42:32.275857] Configured Lic search path (21.01-s002): 5280@14.139.1.126
+
+Version: 21.14-s082_1, built Thu Jun 23 02:02:08 PDT 2022
+Options: 
+Date:    Mon Jan 05 16:42:32 2026
+Host:    c2snirma6.nirmauni.ac.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (12cores*20cpus*1physical cpu*12th Gen Intel(R) Core(TM) i7-12700 25600KB) (15871132KB)
+PID:     45061
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+
+[16:42:53.424827] Periodic Lic check successful
+[16:42:53.424827] Feature usage summary:
+[16:42:53.424827] Genus_Synthesis
+Checking out license: Genus_Synthesis (21 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (4 seconds elapsed).
+
+WARNING: This version of the tool is 1292 days old.
+@genus:root: 1> run run.tcl
+ambiguous command name "run": run_embedded_script run_flow run_metric_category
+@genus:root: 2> set_attribute lib_search_path /home/install/FOUNDRY/digital/180nm/dig/lib
+Error   : The tool is running in common ui mode. [TUI-509] [::unknown]
+        : Command 'set_attribute' is a legacy ui command.
+        : Use set_db/get_db instead or do set_db common_ui false at start of the run.
+@genus:root: 3> set_attribute init_hdl_search_path /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter
+Error   : The tool is running in common ui mode. [TUI-509] [::unknown]
+        : Command 'set_attribute' is a legacy ui command.
+@genus:root: 4> set_attribute library slow.lib
+Error   : The tool is running in common ui mode. [TUI-509] [::unknown]
+        : Command 'set_attribute' is a legacy ui command.
+@genus:root: 5> 
+@genus:root: 5> read_hdl ring_counter_32_bit.v
+@genus:root: 6> elaborate
+Error   : Failed to execute command. [LBR-163] [elaborate]
+        : No target technology library was loaded.
+        : Specify libraries using read_libs or read_mmmc.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+1
+@genus:root: 7> 
+@genus:root: 7> read_sdc /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/constraints_top.sdc
+Design not exist for read_sdc
+@genus:root: 8> syn_generic
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+1
+@genus:root: 9> syn_map
+Error   : Failed to execute command. [LBR-163] [syn_map]
+        : No target technology library was loaded.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_map
+1
+@genus:root: 10> syn_opt -effort medium
+Error   : Failed to execute command. [LBR-163] [syn_opt]
+        : No target technology library was loaded.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_opt
+1
+@genus:root: 11> 
+@genus:root: 11> write_sdf -timescale ns -nonegchecks -recrem split -edges check_edge > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/delays.sdf
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_sdf]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on find_unique_design
+@genus:root: 12> write_hdl > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_netlist.v
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_hdl]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 13> write_sdc > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_sdc.sdc
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_sdc]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 14> 
+@genus:root: 14> gui_show
+@genus:root: 15> report timing > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_timing.rep
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [_report_timing]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 16> report_power > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_power.rep
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::power::report_power]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 17> report_area > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_cell.rep
+There are no libraries loaded.
+Failed on report area
+
+Lic Summary:
+[16:44:08.008304] Cdslmd servers: cadence-c2s
+[16:44:08.008306] Feature usage summary:
+[16:44:08.008306] Genus_Synthesis
+
+Normal exit.

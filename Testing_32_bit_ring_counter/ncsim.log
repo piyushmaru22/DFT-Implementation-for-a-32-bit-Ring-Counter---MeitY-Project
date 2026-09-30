@@ -1,0 +1,33 @@
+ncsim(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm tb_ring_counter.clk tb_ring_counter.q tb_ring_counter.reset
+Created probe 1
+ncsim> run
+At time 0, q = 00000000000000000000000000000001
+At time 15, q = 00000000000000000000000000000010
+At time 25, q = 00000000000000000000000000000100
+At time 35, q = 00000000000000000000000000001000
+At time 45, q = 00000000000000000000000000010000
+At time 55, q = 00000000000000000000000000100000
+At time 65, q = 00000000000000000000000001000000
+At time 75, q = 00000000000000000000000010000000
+At time 85, q = 00000000000000000000000100000000
+At time 95, q = 00000000000000000000001000000000
+At time 105, q = 00000000000000000000010000000000
+At time 115, q = 00000000000000000000000000000001
+At time 125, q = 00000000000000000000000000000010
+At time 135, q = 00000000000000000000000000000100
+At time 145, q = 00000000000000000000000000001000
+At time 155, q = 00000000000000000000000000010000
+At time 165, q = 00000000000000000000000000100000
+Simulation complete via $finish(1) at time 175 NS + 0
+./ring_counter_tb.v:40         $finish();
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 38.6M program + 275.5M data = 314.2M total (317.7M Peak)
+ncsim: CPU Usage - 2.5s system + 0.5s user = 3.0s total (454.4s, 0.7% cpu)

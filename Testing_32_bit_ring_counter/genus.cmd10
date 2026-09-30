@@ -1,0 +1,22 @@
+# Cadence Genus(TM) Synthesis Solution, Version 21.14-s082_1, built Jun 23 2022 14:32:08
+
+# Date: Mon Jan 05 16:52:04 2026
+# Host: c2snirma6.nirmauni.ac.in (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (12cores*20cpus*1physical cpu*12th Gen Intel(R) Core(TM) i7-12700 25600KB)
+# OS:   Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+set_db lib_search_path /home/install/FOUNDRY/digital/180nm/dig/lib
+set_db init_hdl_search_path /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter
+set_db library slow.lib
+read_hdl ring_counter_32_bit.v
+elaborate
+read_sdc /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/constraints_top.sdc
+syn_generic
+syn_map
+syn_opt -effort medium
+write_sdf -timescale ns -nonegchecks -recrem split -edges check_edge > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/delays.sdf
+write_hdl > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_netlist.v
+write_sdc > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_sdc.sdc
+gui_show
+report timing > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_timing.rep
+report_power > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_power.rep
+report_area > /root/Desktop/genus_syn_ring_count/Testing_32_bit_ring_counter/ring_counter_32_bit_cell.rep
